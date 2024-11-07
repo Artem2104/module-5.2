@@ -4,19 +4,19 @@ class House:
         self.number_of_floors = number_of_floors
 
 
-    def go_to(self, new_floor): # Проверка на допустимость этажа
-        if new_floor > self.number_of_floors or new_floor < 1:
-            print("Такого этажа не существует")
-        for i in range(1, new_floor + 1):
-            if new_floor < self.number_of_floors:
-                print(i)
+    def go_to(self, new_floor):                             # 4
+        if 1 <= new_floor <= self.number_of_floors:
+            for i in range(1, new_floor + 1):
+                print (i)
+        else:
+            print ('Такого этажа не существует')
 
     def __len__(self):
         return self.number_of_floors
 
     def __str__(self):
-        return (f'Название: {self.name}, '
-                f'Кол-во этажей: {self.number_of_floors}')
+        return self.name
+
 
 h1 = House('ЖК Эльбрус', 10)
 h2 = House('ЖК Акация', 20)
